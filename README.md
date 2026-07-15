@@ -8,6 +8,12 @@ Game development by PythonLearning Reddit community
 
 ## Download
 
+### Security Warning
+We review all submitted code changes for safety, but we can't guarantee no malicious code was introduced. For maximum safety, run this game:
+1. In a Docker container or virtual machine (best isolation)
+2. In a separate user account with limited permissions
+3. After reviewing the source code yourself
+
 ### Install GIT
 First install GIT:
 - **Linux**: https://git-scm.com/download/linux

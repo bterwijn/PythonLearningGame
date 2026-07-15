@@ -1,8 +1,12 @@
 @echo off
 REM Setup script for PythonLearningGame (Windows)
 
-echo Creating virtual environment...
-python -m venv venv
+if exist venv (
+  echo Virtual environment already exists.
+) else (
+  echo Creating virtual environment...
+  python -m venv venv
+)
 
 echo Activating virtual environment...
 call venv\Scripts\activate

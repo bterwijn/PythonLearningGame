@@ -1,8 +1,12 @@
 #!/bin/bash
 # Setup script for PythonLearningGame
 
-echo "Creating virtual environment..."
-python3 -m venv venv
+if [ ! -d venv ]; then
+  echo "Creating virtual environment..."
+  python3 -m venv venv
+else
+  echo "Virtual environment already exists."
+fi
 
 echo "Activating virtual environment..."
 source venv/bin/activate
