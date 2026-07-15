@@ -9,7 +9,7 @@
 
 Read the code and make your changes, maybe:
 - change behavior
-- add a unit
+- add a new unit type
 - add special effects
 - add new game dynamics
 - ... 

@@ -7,7 +7,7 @@ I want your help to make this a fun Python game. It's purely educational, an opp
 - PyGame
 - team work using GIT 
 
-This should be accesible for Python students how are comfortable with loops, functions, and classes.
+This should be accessible for Python students how are comfortable with loops, functions, and classes.
 
 ![PythonLearningGame](images/PythonLearningGame.png)
 
