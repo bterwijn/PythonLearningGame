@@ -1,7 +1,7 @@
 # PythonLearningGame
 Game development by the [PythonLearning](https://www.reddit.com/r/PythonLearning/) Reddit community.
 
-I need your help to make this a fun Python game. It's purely educational, an opportunity to learn about:
+I want your help to make this a fun Python game. It's purely educational, an opportunity to learn about:
 - Python
 - (quick and dirty) Object Oriented Programming
 - PyGame
