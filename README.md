@@ -1,18 +1,25 @@
 # PythonLearningGame
 Game development by PythonLearning Reddit community
 
+![PythonLearningGame](images/PythonLearningGame.png)
 
-## Active Forks
+# Active Forks
 
 - https://github.com/bterwijn/pythonlearninggame  (this repo)
+
+
+## Getting Started
+
+1. [First Play the Game](README.md#download)
+2. [See instructions to make and submit changes](MakeSubmitChanges.md)
 
 ## Download
 
 ### Security Warning
-We review all submitted code changes for safety, but we can't guarantee no malicious code was introduced. For maximum safety, run this game:
-1. In a Docker container or virtual machine (best isolation)
-2. In a separate user account with limited permissions
-3. After reviewing the source code yourself
+We review submitted code changes for safety, but we can't guarantee no malicious code was introduced. For maximum safety, run this game:
+- In a Docker container or virtual machine (best isolation)
+- In a separate user account with limited permissions
+- After reviewing the source code yourself
 
 ### Install GIT
 First install GIT:
