@@ -1,5 +1,13 @@
 # PythonLearningGame
-Game development by PythonLearning Reddit community
+Game development by the [PythonLearning](https://www.reddit.com/r/PythonLearning/) Reddit community.
+
+I need your help to make this a fun Python game. It's purely educational, an opportunity to learn about:
+- Python
+- (quick and dirty) Object Oriented Programming
+- PyGame
+- team work using GIT 
+
+This should be accesible for Python students how are comfortable with loops, functions, and classes.
 
 ![PythonLearningGame](images/PythonLearningGame.png)
 
@@ -7,11 +15,10 @@ Game development by PythonLearning Reddit community
 
 - https://github.com/bterwijn/pythonlearninggame  (this repo)
 
-
 ## Getting Started
 
-1. [First Play the Game](README.md#download)
-2. [See instructions to make and submit changes](MakeSubmitChanges.md)
+1. First [play the game](README.md#download).
+2. Then [see instructions to make and submit changes](MakeSubmitChanges.md).
 
 ## Download
 
@@ -28,12 +35,13 @@ First install GIT:
 - **Windows**: https://git-scm.com/download/win
 
 ### Clone a Fork
+In a terminal:
 ```bash
 git clone https://github.com/bterwijn/PythonLearningGame.git  # or other fork
 ```
 
 ## Setup
-We will:
+This will:
 1. Create and activate a virtual environment
 2. Install all dependencies
 
