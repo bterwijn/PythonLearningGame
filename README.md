@@ -1,9 +1,27 @@
 # PythonLearningGame
 Game development by PythonLearning Reddit community
 
+
+## Active Forks
+
+- https://github.com/bterwijn/pythonlearninggame  (this repo)
+
+## Download
+
+### Install GIT
+First install GIT:
+- **Linux**: https://git-scm.com/download/linux
+- **MacOS**: https://git-scm.com/download/mac
+- **Windows**: https://git-scm.com/download/win
+
+### Clone a Fork
+```bash
+git clone https://github.com/bterwijn/PythonLearningGame.git  # or other fork
+```
+
 ## Setup
 
-### Setup on Linux/macOS
+### Setup on Linux/MacOS
 Open a terminal in the project folder and run:
 ```bash
 bash setup.sh
