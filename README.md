@@ -5,7 +5,7 @@ I want your help to make this a fun Python game. It's purely educational, an opp
 - Python
 - (quick and dirty) Object Oriented Programming
 - PyGame
-- team work using GIT 
+- Teamwork using GIT
 
 This should be accessible for Python students how are comfortable with loops, functions, and classes.
 
