@@ -3,7 +3,7 @@
 
 - create or login to your [GitHub](https://github.com/) acount
 - create your own fork by clicking 'Fork' on one of [these repos](README.md#active-forks)
-- clone your fork
+- 'git clone' your fork to make your local working copy
 
 ## Make Changes
 
@@ -31,7 +31,7 @@ We expect you to write and understand the changes you submit. You may use AI to 
 - 'git pull' these changes to your local working copy 
 - merge these changes with your changes
 - 'git push' the merged changes back to your fork
-- on GitHub, click 'New Pull Request' button on your fork
+- on GitHub, click 'New Pull Request' button on your fork to submit your changes as pull request
 - wait for your changes to be reviewed and accepted
 
-If merging was too difficult, or your pull request is not accepted (maybe because your changes made the code too complex for beginners), send me the URL of your fork so I can add it as [active fork](README.md#active-forks) so people can play your game and make further changes to your fork. When accepting pull requests, review the changes to reject malicious code to keep it safe.
+If merging was too difficult, or your pull request is not accepted (maybe because your changes made the code too complex for beginners), send me the URL of your fork so I can add it as [active fork](README.md#active-forks) so people can play your game and make further changes to your fork. When accepting pull requests, first review the changes to reject malicious code to keep it safe.
