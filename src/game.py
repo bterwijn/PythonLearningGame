@@ -56,7 +56,7 @@ class Game:
             pos_old = unit.get_position().copy() # when colliding, we will revert to this position
             unit.step()
             for other in globals.units:
-                if unit is not other:
+                if unit is not other: # don't collide with self
                     square_distance = (unit.get_position() - other.get_position()).length_squared()
                     square_radius_sum = (unit.radius + other.radius) ** 2
                     if square_distance < square_radius_sum:
@@ -76,6 +76,26 @@ class Game:
         for unit in globals.units:
             unit.draw(globals.display)
 
+    def draw_panel(self):
+        initial_hitpoints = Player.initial_hitpoints
+        hitpoints = globals.player.hitpoints
+        token_count = globals.player.token_count
+        win_token_count = globals.win_token_count
+        width = globals.display.get_width()
+        height = 4
+        margin = 20
+        pygame.draw.rect(globals.display, (255, 0, 0), 
+                         (margin, height, (width - 2 * margin) * hitpoints / initial_hitpoints, height)) 
+        pygame.draw.rect(globals.display, (0, 255, 0), 
+                         (margin, 3*height, (width - 2 * margin) * token_count / win_token_count, height))
+        pygame.draw.line(globals.display, (255, 255, 255),
+                        (margin, height), (margin, 4*height), 4)
+        pygame.draw.line(globals.display, (255, 255, 255),
+                        (width - margin, height), (width - margin, 4*height), 4)
+
+    def test_win(self):
+        return globals.player.token_count >= globals.win_token_count
+
     def start(self):
         print("Game Started")
         print("- use cursor or WASD keys to move")
@@ -92,8 +112,12 @@ class Game:
             globals.player.handle_keys(keys)
             self.handle_events()
             self.step_units()
+            self.draw_panel()
             self.draw_units()
             self.kill_dead_units()
+            if self.test_win():
+                print("You Win!")
+                self.running = False
 
             pygame.display.flip()  # draw everything to the display
             clock.tick(self.frames_per_second)

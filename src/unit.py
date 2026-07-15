@@ -7,6 +7,7 @@ class Unit:
     spawn_change = None
     count = None
     max_count = None
+    initial_hitpoints = 100
 
     def __init__(self,
                  radius = 10,
@@ -14,7 +15,7 @@ class Unit:
                  line_width = 4,
                  position=None,
                  speed=None,
-                 hitpoints=100,
+                 hitpoints=initial_hitpoints,
                  attack=10):
         self.radius = radius
         self.color = color
