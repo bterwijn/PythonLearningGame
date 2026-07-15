@@ -23,10 +23,10 @@ This should be accesible for Python students how are comfortable with loops, fun
 ## Download
 
 ### Security Warning
-We review submitted code changes for safety, but we can't guarantee no malicious code was introduced. For maximum safety, run this game:
-- In a Docker container or virtual machine (best isolation)
-- In a separate user account with limited permissions
-- After reviewing the source code yourself
+We review submitted code changes for safety, but we can't guarantee no malicious code was introduced. We are **not responsible for any damages** as a result of running code in any of these forks. For proper safety, run this game:
+1. In a Docker container or virtual machine (best isolation)
+2. In a separate user account with limited permissions
+3. After reviewing the source code yourself
 
 ### Install GIT
 First install GIT:
