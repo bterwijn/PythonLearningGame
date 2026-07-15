@@ -71,5 +71,5 @@ When you're done:
 deactivate
 ```
 
-### Making and Submitting Changes
+# Making and Submitting Changes
 See these [instructions to make and submit changes](MakeSubmitChanges.md) to this game. Happy coding!
