@@ -9,7 +9,7 @@ I want your help to make this a fun Python game. It's purely educational, an opp
 
 This should be accessible for Python students how are comfortable with loops, functions, and classes.
 
-![PythonLearningGame](images/PythonLearningGame.png)
+![PythonLearningGame](images/PythonLearningGame.gif)
 
 # Active Forks
 
