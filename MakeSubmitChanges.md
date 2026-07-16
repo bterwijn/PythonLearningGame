@@ -9,7 +9,7 @@ We'll use git to submit the changes we make. Git can be a bit diffcult to get st
 
 ## GIT Setup
 
-When you submit changes, it's good to have your name and email included so people can over time see all the works you've done on GitHub. Setup your git user on your local machine using these command in a terminal:
+When you submit changes, it's good to have your name and email included so people can over time see all the works you've done on GitHub. Setup your git user on your local machine using these commands in a terminal:
 
 ```shell
 git config --global user.name "FIRST_NAME LAST_NAME"
