@@ -1,7 +1,11 @@
 
 # GIT
 
-We'll use git to submit the changes we make. Git can be a bit diffcult to get started with but it's an essential tool for software development these days. Maybe see this [Git Tutorial](https://www.youtube.com/watch?v=8JJ101D3knE) for an introdution.
+We'll use git to submit the changes we make. Git can be a bit diffcult to get started with but it's an essential tool for software development these days. Maybe see one of these video for an introdution:
+
+- [Git Tutorial for Beginners: Learn Git in 1 Hour, Programming with Mosh](https://www.youtube.com/watch?v=8JJ101D3knE)
+- [Git and GitHub Tutorial for Beginners, Kevin Stratvert](https://www.youtube.com/watch?v=tRZGeaHPoaw)
+- [Learn Git – Full Course for Beginners, freeCodeCamp.org](https://www.youtube.com/watch?v=zTjRZNkhiEU)
 
 ## GIT Setup
 
