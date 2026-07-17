@@ -7,6 +7,8 @@ We'll use git to submit the changes we make. Git can be a bit diffcult to get st
 - [Git and GitHub Tutorial for Beginners, Kevin Stratvert](https://www.youtube.com/watch?v=tRZGeaHPoaw)
 - [Learn Git – Full Course for Beginners, freeCodeCamp.org](https://www.youtube.com/watch?v=zTjRZNkhiEU)
 
+You can test your git skills by submitting changes to this [GIT test file](#git-test-file).
+
 ## GIT Setup
 
 When you submit changes, it's good to have your name and email included so people can over time see all the works you've done on GitHub. Setup your git user on your local machine using these commands in a terminal:
@@ -56,6 +58,6 @@ We expect you to write and understand the changes you submit. You may use AI to 
 
 If merging was too difficult, or your pull request is not accepted (maybe because your changes made the code too complex for beginners), send me the URL of your fork so I can add it as [active fork](README.md#active-forks) so people can still play your game and make further changes to your fork. Then when accepting pull requests from other, first review the changes to reject malicious code to keep it safe.
 
-# Test GIT
+# GIT test file
 
-If you want to test submitting changes using git, add a few lines to this [git_test_file.txt](./git_test_file.txt) in the repo.
+If you want to test submitting changes using git, add a few lines to this [git_test_file.txt](./git_test_file.txt) and submit it to the repo you forked from.
