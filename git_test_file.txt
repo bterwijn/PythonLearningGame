@@ -1,0 +1,32 @@
+This is a test file to test submitting changes with git.
+Drop a few lines below and try to submit it to the repo you forked from.
+Keep it civilized.
+====================================================================
+
+Hi all, this is a test from Haarlem, Netherlands, Europe.
+I might want to add to the game:
+- player seeking unit
+- explosions as special effect
+- a gun shooting bullets
+I'm not sure yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -55,3 +55,7 @@ We expect you to write and understand the changes you submit. You may use AI to 
 - wait for your changes to be reviewed and accepted
 
 If merging was too difficult, or your pull request is not accepted (maybe because your changes made the code too complex for beginners), send me the URL of your fork so I can add it as [active fork](README.md#active-forks) so people can still play your game and make further changes to your fork. Then when accepting pull requests from other, first review the changes to reject malicious code to keep it safe.
+
+# Test GIT
+
+If you want to test submitting changes using git, add a few lines to this [git_test_file.txt](./git_test_file.txt) in the repo.
