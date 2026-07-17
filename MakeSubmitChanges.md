@@ -49,7 +49,7 @@ We expect you to write and understand the changes you submit. You may use AI to 
 # Submit Changes
 
 - go to your fork on GitHub
-- get all changes by others from the repo you forked from by clicking 'X commits behind' (if any)
+- get all changes by others from the repo you forked from by clicking 'X commits behind' (if any, do this regularly to keep up to date)
 - 'git pull' these changes to your local working copy 
 - merge these changes with your own changes
 - 'git push' the merged changes back to your fork
