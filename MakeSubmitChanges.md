@@ -36,7 +36,19 @@ Read the code and make your changes, maybe:
 
 ## Code overview
 
-For an overview of the code structure see this UML class diagram:
+Currently these files implement the game:
+
+```
+game.py
+globals.py
+unit.py
+player.py
+token.py
+hazard.py
+utils.py
+```
+
+For the code structure see this UML class diagram:
 
 ![Classes](uml_diagram/classes_PythonLearningGame.png)
 
