@@ -5,6 +5,7 @@ import src.globals as globals
 from src.player import Player
 from src.token import Token
 from src.hazard import Hazard
+from src.seeker import Seeker
 
 class Game:
     def __init__(self):
@@ -23,7 +24,7 @@ class Game:
         globals.units.append(unit)
 
     def spawn_units(self):
-        spawn_types = [Token, Hazard]
+        spawn_types = [Token, Hazard, Seeker]
         for spawn_type in spawn_types:
             if spawn_type.count < spawn_type.max_count:
                 if random.random() < spawn_type.spawn_chance:
@@ -101,6 +102,7 @@ class Game:
         print("- use cursor or WASD keys to move")
         print("- catch green tokens to gain points")
         print("- avoid red hazards to stay alive")
+        print("- avoid blue seekers that chase you")
         clock = pygame.time.Clock()
         
         self.running = True
