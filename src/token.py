@@ -9,7 +9,10 @@ class Token(Unit):
     max_count = 3
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs, color=(0, 255, 0), radius=10, line_width=2)
+        super().__init__(*args, **kwargs,
+                         color=(0, 255, 0),
+                         radius=10,
+                         line_width=2)
         Token.count += 1
 
     def __del__(self):

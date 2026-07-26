@@ -31,21 +31,28 @@ class Unit:
 
     def step(self):
         self.position += self.speed
-        
+
+    def collide_border(self):
+        pass
+
     def collide_display_border(self):
         width, height = globals.display.get_size()
         if self.position.x - self.radius < 0:
             self.position.x = self.radius
             self.speed.x *= -1
+            self.collide_border()
         elif self.position.x + self.radius > width:
             self.position.x = width - self.radius
             self.speed.x *= -1
+            self.collide_border()
         if self.position.y - self.radius < 0:
             self.position.y = self.radius
             self.speed.y *= -1
+            self.collide_border()
         elif self.position.y + self.radius > height:
             self.position.y = height - self.radius
             self.speed.y *= -1
+            self.collide_border()
 
     def get_position(self):
         return self.position

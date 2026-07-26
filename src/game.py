@@ -103,6 +103,7 @@ class Game:
         print("- catch green tokens to gain points")
         print("- avoid red hazards to stay alive")
         print("- avoid blue seekers that chase you")
+        print("- press SPACE or RETURN to shoot bullets")
         clock = pygame.time.Clock()
         
         self.running = True
