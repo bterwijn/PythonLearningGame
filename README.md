@@ -10,6 +10,7 @@ I want your help to make this a fun Python game. It's purely educational, an opp
 This should be accessible for Python students how are comfortable with loops, functions, and classes.
 
 ![PythonLearningGame](images/PythonLearningGame.gif)
+
 This GIF was recorded at branch/tag 'starting_point'. Many following commits have developed the game, but if you want to go back to the beginning, go here.
 
 # Active Forks
