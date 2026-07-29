@@ -9,8 +9,8 @@ class Bullet(Unit):
                          color=(255, 255, 255),  # red, green, blue
                          radius=4,
                          line_width=4,
-                         attack=10,
-                         hitpoints=10)
+                         attack=9,
+                         hitpoints=1)
 
     def collide_border(self):
         self.hitpoints = -1  # destroy the bullet when it hits a border
