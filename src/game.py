@@ -50,7 +50,26 @@ class Game:
                     print("MOUSEMOTION: ",pos)
 
     def collision(self, unit1, unit2):
-        unit1.speed, unit2.speed = unit2.speed, unit1.speed
+        # Switched to elastic collision response based on https://en.wikipedia.org/wiki/Elastic_collision
+        # first compute the normal vector between the two units
+        delta = unit1.get_position() - unit2.get_position()
+        if delta.length_squared() == 0:  # fix if delta is zero
+            relative_speed = unit1.speed - unit2.speed
+            if relative_speed.length_squared() == 0:
+                return  # no fix, ignore collision
+            delta = relative_speed.normalize()
+        normal = delta.normalize()
+        # compute the relative speed along the normal
+        relative_speed = unit1.speed - unit2.speed
+        velocity_along_normal = relative_speed.dot(normal)
+        mass1 = unit1.radius  # mass proportional to radius looks better than area (radius**2)
+        mass2 = unit2.radius
+        # compute impulse using the formula for elastic collisions
+        impulse_strength = -(2.0 * velocity_along_normal) / ((1.0 / mass1) + (1.0 / mass2))
+        impulse = normal * impulse_strength
+        # apply impulse to the units' speeds
+        unit1.speed += impulse / mass1
+        unit2.speed -= impulse / mass2
 
     def step_units(self):
         for unit in globals.units:
