@@ -16,7 +16,7 @@ class Game:
         self.background_colour = (0, 0, 0)
         self.frames_per_second = 60
         globals.player = Player()
-        globals.units = [globals.player]
+        globals.units.append(globals.player)
         self.mouse_buttons_down = {}
 
     def spawn_unit(self, unit_class):

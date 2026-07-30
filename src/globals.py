@@ -1,5 +1,5 @@
 
 display = None
 player = None
-units = None
+units = []
 win_token_count = 20
