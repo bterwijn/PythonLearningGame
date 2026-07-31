@@ -5,7 +5,7 @@ import src.globals as globals
 from src.unit import Unit
 
 class Troll(Unit):
-    spawn_chance = 0.005
+    spawn_chance = 0.001
     count = 0
     max_count = 1
     image = pygame.image.load("assets/troll.png")
