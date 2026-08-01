@@ -6,6 +6,8 @@ from src.player import Player
 from src.token import Token
 from src.hazard import Hazard
 from src.seeker import Seeker
+from src.bullet import Bullet
+from src.explosion import Explosion
 
 class Game:
     def __init__(self):
@@ -90,7 +92,16 @@ class Game:
         if globals.player.hitpoints <= 0:
             self.running = False
             return
-        globals.units = [unit for unit in globals.units if unit.is_alive()]
+        alive_units = []
+        for unit in globals.units:
+            if unit.is_alive():
+                alive_units.append(unit)
+            else:
+                expl = Explosion(radius = unit.radius, 
+                                color = unit.color,
+                                position = unit.get_position())
+                globals.animations.append(expl)
+        globals.units = alive_units
 
     def draw_units(self):
         for unit in globals.units:
@@ -116,6 +127,17 @@ class Game:
     def test_win(self):
         return globals.player.token_count >= globals.win_token_count
 
+    def step_animations(self):
+        for animation in globals.animations:
+            animation.step()
+
+    def draw_animations(self):
+        for animation in globals.animations:
+            animation.draw(globals.display)
+
+    def remove_animations(self):
+        globals.animations = [animation for animation in globals.animations if animation.is_running()]
+
     def start(self):
         print("Game Started")
         print("- use cursor or WASD keys to move")
@@ -136,7 +158,10 @@ class Game:
             self.step_units()
             self.draw_panel()
             self.draw_units()
+            self.step_animations()
+            self.draw_animations()
             self.kill_dead_units()
+            self.remove_animations()
             if self.test_win():
                 print("You Win!")
                 self.running = False
