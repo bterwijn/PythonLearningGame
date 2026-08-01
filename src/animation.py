@@ -11,10 +11,7 @@ class Animation:
         self.position = position
 
     def step(self):
-        self.position += self.speed
-
-    def collision(self, other):
-        self.hitpoints -= other.attack
+        pass
 
     def is_running(self):
         return True
