@@ -23,10 +23,10 @@ class Troll(Unit):
         Troll.count -= 1
 
     def randomize_acceleration(self):
-        self.acceleration = random.uniform(-0.2, 0.5)
+        self.acceleration = random.uniform(-0.2, 0.45)
 
     def step(self):
-        if random.randint(1, 10) == 1:
+        if random.randint(1, 30) == 1:
             self.randomize_acceleration()
         direction = globals.player.get_position() - self.get_position()
         direction.normalize_ip()

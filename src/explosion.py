@@ -20,4 +20,4 @@ class Explosion(Animation):
         return self.radius < self.max_radius
 
     def draw(self, surface):
-        pygame.draw.circle(surface, self.color, self.position, self.radius, 1)
+        pygame.draw.circle(surface, self.color, self.position, self.radius, 2)
