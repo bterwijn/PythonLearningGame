@@ -16,6 +16,13 @@ def random_display_position(margin=20):
     vec.y += margin
     return vec
 
+def random_position(away_from, distance=200, margin=20, tries=50):
+    for _ in range(tries):  # try specified number of times to find a valid position
+        vec = random_display_position(margin)
+        if (vec - away_from).length() >= distance:
+            return vec
+    return None
+
 def random_vector_circle(min_radius, max_radius):
     angle = random.uniform(0, 2*math.pi)
     radius = random.uniform(min_radius, max_radius)

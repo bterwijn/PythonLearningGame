@@ -9,6 +9,7 @@ from src.seeker import Seeker
 from src.troll import Troll
 from src.bullet import Bullet
 from src.explosion import Explosion
+from src import utils
 
 class Game:
     def __init__(self):
@@ -23,8 +24,10 @@ class Game:
         self.mouse_buttons_down = {}
 
     def spawn_unit(self, unit_class):
-        unit = unit_class()
-        globals.units.append(unit)
+        position = utils.random_position(away_from=globals.player.get_position())
+        if position is not None:  # pnly if valid position found
+            unit = unit_class(position=position)
+            globals.units.append(unit)
 
     def spawn_units(self):
         spawn_types = [Token, Hazard, Seeker, Troll]
@@ -51,6 +54,9 @@ class Game:
                 if any(self.mouse_buttons_down.values()):
                     pos = pygame.mouse.get_pos()
                     print("MOUSEMOTION: ",pos)
+
+    def does_collide(self, unit1, unit2):
+        return True
 
     def collision(self, unit1, unit2):
         # Switched to elastic collision response based on https://en.wikipedia.org/wiki/Elastic_collision
@@ -83,10 +89,11 @@ class Game:
                     square_distance = (unit.get_position() - other.get_position()).length_squared()
                     square_radius_sum = (unit.radius + other.radius) ** 2
                     if square_distance < square_radius_sum:
-                        unit.set_position(pos_old)
-                        self.collision(unit, other)  # Handle collision
-                        unit.collision(other)
-                        other.collision(unit)
+                        if self.does_collide(unit, other):  # test if units should collide
+                            self.collision(unit, other)  # Handle collision
+                            unit.set_position(pos_old)
+                            unit.collision(other)
+                            other.collision(unit)
             unit.collide_display_border()
 
     def kill_dead_units(self):
