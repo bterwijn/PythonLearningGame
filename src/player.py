@@ -1,4 +1,5 @@
 import pygame
+import random
 
 import src.globals as globals
 from src.unit import Unit
@@ -35,7 +36,9 @@ class Player(Unit):
             return  # too soon to shoot again
         bullet_speed = 12
         bullet_position = self.get_position() + self.direction * (self.radius * 1.5)  # spawn bullet just outside the player
-        bullet_speed = self.direction * bullet_speed
+        gaus = random.gauss(0, 2)  # small random angle for bullet spread
+        direction = self.direction.rotate(gaus)
+        bullet_speed = direction * bullet_speed
         globals.units.append(Bullet(position=bullet_position, speed=bullet_speed))
         self.last_shot_time = pygame.time.get_ticks()  # update last shot time
 
