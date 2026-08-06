@@ -5,7 +5,7 @@ import src.globals as globals
 from src.unit import Unit
 
 class Troll(Unit):
-    spawn_chance = 0.001
+    spawn_chance = 0.0005
     count = 0
     max_count = 1
     image = pygame.image.load("assets/troll.png")
@@ -15,15 +15,18 @@ class Troll(Unit):
         super().__init__(*args, **kwargs,
                          radius=(width+height)/4,
                          attack=999999,
-                         hitpoints=400)
+                         hitpoints=400,
+                         color=(0, 255, 0),
+                         )
         self.randomize_acceleration()
         Troll.count += 1
 
     def __del__(self):
         Troll.count -= 1
+        globals.player.token_count += 5
 
     def randomize_acceleration(self):
-        self.acceleration = random.uniform(-0.2, 0.45)
+        self.acceleration = random.uniform(-0.1, 0.3)
 
     def step(self):
         if random.randint(1, 30) == 1:
