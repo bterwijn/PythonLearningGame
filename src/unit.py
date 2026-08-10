@@ -68,3 +68,6 @@ class Unit:
     
     def draw(self, surface):
         pygame.draw.circle(surface, self.color, self.position, self.radius, self.line_width)
+
+    def dies(self):
+        pass

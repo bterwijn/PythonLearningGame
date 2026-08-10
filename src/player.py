@@ -5,6 +5,7 @@ import src.globals as globals
 from src.unit import Unit
 from src.token import Token
 from src.bullet import Bullet
+from src.tail import Tail
 
 class Player(Unit):
 
@@ -15,6 +16,7 @@ class Player(Unit):
         self.direction = (middle - self.position).normalize()
         self.token_count = 0
         self.last_shot_time = 0
+        self.last_tail = self
 
     def handle_keys(self, keys):
         acceleration = 0.5
@@ -51,11 +53,24 @@ class Player(Unit):
         end_pos = self.position + self.direction * (self.radius * 1.5)
         pygame.draw.line(surface, (255, 255, 255), self.position, end_pos, self.line_width)
 
+    def add_tail(self):
+        prev_tail = self.last_tail
+        self.last_tail = Tail(prev=None,
+                    next=self.last_tail,
+                    direction=self.direction.copy(),
+                    position=self.position - self.direction * (self.radius * 2),
+                    speed=self.speed.copy(),
+                    )
+        if prev_tail is not self:
+            prev_tail.prev = self.last_tail 
+        globals.units.append(self.last_tail)
+
     def collision(self, other):
         if isinstance(other, Token):  # special collision behavior for Token
             self.token_count += 1
             other.hitpoints = -1  # destroy the token
             print('token_count:', self.token_count)
+            self.add_tail()
         else:
             super().collision(other)  # normal collision behavior super class Unit
             print('hitpoints:', self.hitpoints)

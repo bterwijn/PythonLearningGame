@@ -9,6 +9,7 @@ from src.seeker import Seeker
 from src.troll import Troll
 from src.bullet import Bullet
 from src.explosion import Explosion
+from src.tail import Tail
 from src import utils
 
 class Game:
@@ -56,7 +57,12 @@ class Game:
                     print("MOUSEMOTION: ",pos)
 
     def does_collide(self, unit1, unit2):
-        return True
+        non_collide_types = {(Tail, Tail), 
+                             (Player, Tail), (Tail, Player), 
+                             (Bullet, Tail), (Tail, Bullet), 
+                             (Tail, Token), (Token, Tail),
+                             }
+        return  (type(unit1), type(unit2)) not in non_collide_types
 
     def collision(self, unit1, unit2):
         # Switched to elastic collision response based on https://en.wikipedia.org/wiki/Elastic_collision
@@ -99,12 +105,12 @@ class Game:
     def kill_dead_units(self):
         if globals.player.hitpoints <= 0:
             self.running = False
-            return
         alive_units = []
         for unit in globals.units:
             if unit.is_alive():
                 alive_units.append(unit)
             else:
+                unit.dies()
                 expl = Explosion(radius = unit.radius, 
                                 color = unit.color,
                                 position = unit.get_position())
