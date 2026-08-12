@@ -22,6 +22,8 @@ class Game:
         self.frames_per_second = 60
         globals.player = Player()
         globals.units.append(globals.player)
+        for i in range(10):
+            globals.player.add_tail()  # start with tail of 10 segments
         self.mouse_buttons_down = {}
 
     def spawn_unit(self, unit_class):
