@@ -58,7 +58,8 @@ class Player(Unit):
         self.last_tail = Tail(prev=None,
                     next=self.last_tail,
                     direction=self.direction.copy(),
-                    position=self.position - self.direction * (self.radius * 2),
+                    position=self.last_tail.position - 
+                       self.last_tail.direction * (self.last_tail.radius * 2),
                     speed=self.speed.copy(),
                     )
         if prev_tail is not self:
