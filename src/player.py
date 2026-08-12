@@ -21,13 +21,13 @@ class Player(Unit):
     def handle_keys(self, keys):
         acceleration = 0.5
         rotate_speed = 4  # degrees per frame
-        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+        if keys[pygame.K_LEFT] or keys[pygame.K_a] or keys[pygame.K_z]:
             self.direction.rotate_ip(-rotate_speed)
-        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d] or keys[pygame.K_x]:
             self.direction.rotate_ip(rotate_speed)
-        if keys[pygame.K_UP] or keys[pygame.K_w]:
+        if keys[pygame.K_UP] or keys[pygame.K_w] or keys[pygame.K_QUOTE]:
             self.speed += self.direction * acceleration
-        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+        if keys[pygame.K_DOWN] or keys[pygame.K_s] or keys[pygame.K_SLASH]:
             self.speed -= (self.direction/2) * acceleration
         if keys[pygame.K_SPACE] or keys[pygame.K_RETURN]:
             self.shoot()

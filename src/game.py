@@ -156,7 +156,7 @@ class Game:
 
     def start(self):
         print("Game Started")
-        print("- use cursor or WASD keys to move")
+        print("- use cursor or WASD or ZX/' keys to move")
         print("- catch green tokens to gain points")
         print("- avoid red hazards to stay alive")
         print("- avoid blue seekers that chase you")
