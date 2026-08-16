@@ -7,6 +7,7 @@ from src.token import Token
 from src.hazard import Hazard
 from src.seeker import Seeker
 from src.troll import Troll
+from src.cupta import Cupta
 from src.bullet import Bullet
 from src.explosion import Explosion
 from src.tail import Tail
@@ -33,7 +34,7 @@ class Game:
             globals.units.append(unit)
 
     def spawn_units(self):
-        spawn_types = [Token, Hazard, Seeker, Troll]
+        spawn_types = [Token, Hazard, Seeker, Troll, Cupta]
         for spawn_type in spawn_types:
             if spawn_type.count < spawn_type.max_count:
                 if random.random() < spawn_type.spawn_chance:
