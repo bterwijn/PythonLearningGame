@@ -5,7 +5,7 @@ import src.globals as globals
 from src.unit import Unit
 
 class Putler(Unit):
-    spawn_chance = 0.01
+    spawn_chance = 0.0005
     count = 0
     max_count = 1
     images = [pygame.image.load("assets/putler1.png"),
@@ -29,7 +29,7 @@ class Putler(Unit):
 
     def __del__(self):
         Putler.count -= 1
-        globals.player.token_count += 0
+        globals.player.token_count += 2
 
     def change_image(self):
         self.image_index = random.randrange(0, len(Putler.images))
