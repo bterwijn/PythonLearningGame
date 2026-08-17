@@ -8,6 +8,7 @@ from src.bullet import Bullet
 from src.tail import Tail
 
 class Player(Unit):
+    SPEED = 0.5
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs, color=(200, 200, 200), radius=20, line_width=6)
@@ -19,17 +20,19 @@ class Player(Unit):
         self.last_tail = self
 
     def handle_keys(self, keys):
-        acceleration = 0.5
-        rotate_speed = 4  # degrees per frame
+        v = pygame.Vector2(0, 0)
         if keys[pygame.K_LEFT] or keys[pygame.K_a] or keys[pygame.K_z]:
-            self.direction.rotate_ip(-rotate_speed)
+            v.x -= self.SPEED
         if keys[pygame.K_RIGHT] or keys[pygame.K_d] or keys[pygame.K_x]:
-            self.direction.rotate_ip(rotate_speed)
+            v.x += self.SPEED
         if keys[pygame.K_UP] or keys[pygame.K_w] or keys[pygame.K_QUOTE]:
-            self.speed += self.direction * acceleration
+            v.y -= self.SPEED
         if keys[pygame.K_DOWN] or keys[pygame.K_s] or keys[pygame.K_SLASH]:
-            self.speed -= (self.direction/2) * acceleration
-        if keys[pygame.K_SPACE] or keys[pygame.K_RETURN]:
+            v.y += self.SPEED
+        if v.magnitude() > 0:
+            self.speed += v.normalize() * self.SPEED
+    
+        if pygame.mouse.get_pressed()[0] or keys[pygame.K_SPACE] or keys[pygame.K_RETURN]:
             self.shoot()
 
     def shoot(self):
@@ -50,7 +53,7 @@ class Player(Unit):
             self.direction = mouse_pos - self.position
             self.direction.normalize_ip()
         super().step()      # normal step behavior super class Unit
-        self.speed *= 0.94  # apply friction to slow down the player over time
+        self.speed *= 0.94
 
     def draw(self, surface):
         super().draw(surface)  # normal draw behavior super class Unit

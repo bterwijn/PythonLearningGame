@@ -2,6 +2,7 @@
 import pygame
 import random
 import src.globals as globals
+from src.cuptas_forbidden_apple import CuptasForbiddenApple
 from src.unit import Unit
 
 class Putler(Unit):
@@ -70,4 +71,7 @@ class Putler(Unit):
         for hole in self.holes:
             hole_pos = self.position + hole
             pygame.draw.circle(surface, (0, 0, 0), hole_pos, 7)
+
+    def dies(self):
+        globals.units.append(CuptasForbiddenApple())
         
