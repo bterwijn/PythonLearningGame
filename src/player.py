@@ -8,8 +8,7 @@ from src.bullet import Bullet
 from src.tail import Tail
 
 class Player(Unit):
-    SPEED = 0.5
-
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs, color=(200, 200, 200), radius=20, line_width=6)
         width, height = globals.display.get_size()
@@ -20,18 +19,16 @@ class Player(Unit):
         self.last_tail = self
 
     def handle_keys(self, keys):
-        v = pygame.Vector2(0, 0)
+        acceleration = 0.5
+        rotate_speed = 4  # degrees per frame
         if keys[pygame.K_LEFT] or keys[pygame.K_a] or keys[pygame.K_z]:
-            v.x -= self.SPEED
+            self.direction.rotate_ip(-rotate_speed)
         if keys[pygame.K_RIGHT] or keys[pygame.K_d] or keys[pygame.K_x]:
-            v.x += self.SPEED
+            self.direction.rotate_ip(rotate_speed)
         if keys[pygame.K_UP] or keys[pygame.K_w] or keys[pygame.K_QUOTE]:
-            v.y -= self.SPEED
+            self.speed += self.direction * acceleration
         if keys[pygame.K_DOWN] or keys[pygame.K_s] or keys[pygame.K_SLASH]:
-            v.y += self.SPEED
-        if v.magnitude() > 0:
-            self.speed += v.normalize() * self.SPEED
-    
+            self.speed -= (self.direction/2) * acceleration
         if pygame.mouse.get_pressed()[0] or keys[pygame.K_SPACE] or keys[pygame.K_RETURN]:
             self.shoot()
 
