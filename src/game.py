@@ -48,17 +48,14 @@ class Game:
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
                 button = event.button
-                print("MOUSEBUTTONDOWN: ",pos, button)
                 self.mouse_buttons_down[button] = True
             elif event.type == pygame.MOUSEBUTTONUP:
                 pos = pygame.mouse.get_pos()
                 button = event.button
-                print("MOUSEBUTTONUP: ",pos, button)
                 self.mouse_buttons_down[button] = False
             elif event.type == pygame.MOUSEMOTION:
                 if any(self.mouse_buttons_down.values()):
                     pos = pygame.mouse.get_pos()
-                    print("MOUSEMOTION: ",pos)
 
     def does_collide(self, unit1, unit2):
         non_collide_types = {(Tail, Tail), 
