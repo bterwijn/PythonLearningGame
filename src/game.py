@@ -18,10 +18,9 @@ class Game:
     def __init__(self):
         pygame.init()
         self.running = True
-        globals.display = pygame.display.set_mode((800, 600), pygame.RESIZABLE)
+        globals.display = pygame.display.set_mode((800, 600), pygame.RESIZABLE, vsync=1)
         pygame.display.set_caption('PythonLearningGame')
         self.background_colour = (0, 0, 0)
-        self.frames_per_second = 60
         globals.player = Player()
         globals.units.append(globals.player)
         for i in range(10):
@@ -182,5 +181,5 @@ class Game:
                 self.running = False
 
             pygame.display.flip()  # draw everything to the display
-            clock.tick(self.frames_per_second)
+            clock.tick()
         print("Game Over")
